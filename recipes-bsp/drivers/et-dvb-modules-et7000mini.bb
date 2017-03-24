@@ -1,12 +1,12 @@
 KV = "4.1.21"
-SRCDATE = "20161114"
+SRCDATE = "20170318"
 GCC = "4.9.1"
 
 require et-dvb-modules.inc
 
 SRC_URI = "http://gi-et.info/et7000mini/${MACHINE}-drivers-${KV}-${GCC}-${SRCDATE}.zip"
 
-SRC_URI[md5sum] = "4b756271fdac5692fd6c6ecdce99dd3d"
-SRC_URI[sha256sum] = "bb6b6c004bfc89e2fd74aff7eb12a0a6c5f825567df08f31de6faa2faf858f7c"
+SRC_URI[md5sum] = "fe9f174ec871e283195cb5d318a5bdee"
+SRC_URI[sha256sum] = "6b6a566d3402034136517ef5baf4daee14c73f243a5d83d25cae8bffbaaa663d"
 
 COMPATIBLE_MACHINE = "et7000mini"
