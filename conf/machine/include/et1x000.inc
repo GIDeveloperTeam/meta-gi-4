@@ -29,8 +29,6 @@ PREFERRED_VERSION_linux-${MACHINE} = "4.1.37"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-${MACHINE}"
 
-PREFERRED_PROVIDER_virtual/blindscan-dvbs = "et-blindscan-utils-${MACHINE}"
-
 IMAGE_FSTYPES ?= "tar.bz2"
 
 IMAGEDIR ?= "${MACHINE}"
