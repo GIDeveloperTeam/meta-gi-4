@@ -33,6 +33,9 @@ IMAGE_FSTYPES ?= "tar.bz2"
 
 IMAGEDIR ?= "${MACHINE}"
 
+IMAGEVERSION := "${DISTRO_NAME}-${DISTRO_VERSION}-${DATE}"
+IMAGEVERSION[vardepsexclude] = "DATE"
+
 KERNEL_FILE = "kernel.bin"
 ROOTFS_FILE = "rootfs.tar.bz2"
 
@@ -40,7 +43,7 @@ IMAGE_CMD_tar_prepend = "\
     mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
     cp ${IMAGE_ROOTFS}/boot/update.bin ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/update.bin; \
     cp ${DEPLOY_DIR_IMAGE}/zImage ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${KERNEL_FILE}; \
-    echo ${DISTRO_NAME}-${DISTRO_VERSION}-${DATE} > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
+    echo ${IMAGEVERSION} > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
     echo "rename this file to 'force' to force an update without confirmation" > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/noforce; \
     cd ${IMAGE_ROOTFS}; \
     tar -cvf ${DEPLOY_DIR_IMAGE}/rootfs.tar -C ${IMAGE_ROOTFS} .; \
